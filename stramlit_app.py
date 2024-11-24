@@ -93,7 +93,8 @@ if uploaded_file is not None:
     ])
     nn_model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     nn_model.fit(X_train_scaled, y_train, epochs=10, verbose=0, batch_size=32)
- nn_acc = nn_model.evaluate(X_test_scaled, y_test, verbose=0)[1]
+    
+    nn_acc = nn_model.evaluate(X_test_scaled, y_test, verbose=0)[1]
     st.write(f"**Neural Network Accuracy:** {nn_acc:.2f}")
 
     # Visualize Decision Tree
